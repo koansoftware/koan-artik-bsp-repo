@@ -1,0 +1,34 @@
+= Koan BSP for Samsung Artik
+
+To get the BSP you need to have `repo` installed and use it as:
+
+Install the `repo` utility:
+
+[source,console]
+$: mkdir ~/bin
+$: curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+$: chmod a+x ~/bin/repo
+
+Download the BSP source:
+
+[source,console]
+$: PATH=${PATH}:~/bin
+$: mkdir yocto-artik-koan
+$: cd yocto-artik-koan
+$: repo init -u https://github.com/koansoftware/koan-artik-bsp-repo -b morty
+$: repo sync
+
+At the end of the commands you have every metadata you need to start work with.
+
+To start a simple image build:
+
+[source,console]
+$: source ./setup-environment build
+$: bitbake core-image-minimal
+
+You can use any directory to host your build.
+
+== Contributing
+
+To contribute to this layer you should send the patches for review to: info [AT] koansoftware.com
+
